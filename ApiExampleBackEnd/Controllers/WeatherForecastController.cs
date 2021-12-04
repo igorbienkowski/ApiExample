@@ -39,16 +39,5 @@ namespace ApiExampleBackEnd.Controllers
                 })
                 .ToArray();
         }
-
-        [HttpPost("calculate")]
-        public CalculationsResult CalculateTwoNumbers([FromBody] CalculateRequest request)
-        {
-            _dbContext.CalculateRequests.Add(request);
-            _dbContext.SaveChanges();
-            var result = CalculationService.Calculate(request.Number1, request.Number2);
-            _dbContext.CalculationsResult.Add(result);
-            _dbContext.SaveChanges();
-            return result;
-        }
     }
 }
