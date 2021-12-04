@@ -34,7 +34,7 @@ jobs:
         uses: belon/docker-build-push@v4.0
         with:
           # Name of the Docker image
-          image: testapicr.azurecr.io/apitestimage
+          image: apitestimage
           # Tags override for Docker image
           tags: latest
           # Target Docker registry
